@@ -293,3 +293,236 @@
 
 // Ternary → 3 operands
 // Example: condition ? a : b
+
+
+// =========================================Literals in JS=============================================
+
+// 🔹 What are Literals in JavaScript?
+// 👉 Literal = A fixed value written directly in code.
+// When you write a value directly inside your program, that value is called a literal.
+// Example: let age = 21;
+// Here 21 is a literal.
+// So basically:  Literal = Actual value you store in a variable.
+
+// 🔹 Types of Important Literals
+// String Literal
+// Template Literals
+// Object Literals
+// Array Literals
+
+// 1️⃣ String Literals -> Used to store text.  Written inside: Single quotes ' ', Double quotes " "
+// Example:
+// let name = "Mayank";
+// let message = 'JavaScript is awesome';
+
+// 🔹 String Concatenation (Joining Strings)
+// We use + operator.
+// let firstName = "Mayank";
+// let lastName = "Pandey";
+// let fullName = firstName + " " + lastName;
+// console.log(fullName); 
+// Mayank Pandey
+// 📝 Quick Notes (String Literals) -> Written in ' ' or " " , Used for text , Use + to join strings
+
+// 2️⃣ Template Literals (ES6 Feature) -> Better way to write strings. , Written inside backticks: ` `
+// ✨ Why use template literals?
+// Insert variables easily, Multi-line strings allowed, Cleaner and readable
+// 🔹 Example 1 (Using Variables)
+// let a = 10;
+// let b = 20;
+// console.log(`The sum of ${a} + ${b} is ${a + b}`);
+
+// 👉 ${} is called interpolation
+// It inserts variable or expression inside string.
+
+// 🔹 Example 2 (Multi-line String)
+// let line1 = "Hello";
+// let line2 = "World";
+// let message = `
+// ${line1}
+// ${line2}
+// `;
+// console.log(message);
+// No need for \n like old method.
+
+// 📝 Quick Notes (Template Literals) -> Written using backticks ``, Use ${variable} inside string , Supports multi-line strings,
+// More readable than normal strings
+
+// 3️⃣ Object Literals
+// 👉 Used to create objects directly. -> Objects store data in key-value pairs. Written inside { }
+// Example:
+// let person = {
+//   name: "Mayank",
+//   age: 21,
+//   isRunning: true
+// };
+
+
+// Here: name, age, isRunning → keys
+// "Mayank", 21, true → values
+// ⚠ Important: -> Use , between properties, Do NOT use ; inside object
+
+// ❌ Wrong:
+// let obj = {
+//   name: "Mayank";
+// };
+
+// ✅ Correct:
+// let obj = {
+//   name: "Mayank",
+//   age: 21
+// };
+
+// 📝 Quick Notes (Object Literals) -> Used to represent real-world entities, Written using { }, 
+// Contains key-value pairs, Keys separated by commas, Very important in JavaScript
+
+// 4️⃣ Array Literals
+// 👉 Used to store multiple values in one variable.  Written inside [ ]
+// Example 1:
+// let colors = ['red', 'green', 'blue'];
+
+// Example 2 (Mixed Data Types)
+// let container = [2, "laptop", true, "watch"];
+
+
+// JavaScript arrays:Can store different types, Can store objects, Can store other arrays
+
+// 📝 Quick Notes (Array Literals) -> Written using [ ], Elements separated by commas,
+// Can store mixed data types,Ordered collection (index starts from 0)
+
+// 🔥 Very Simple Difference Summary
+// Type	                    Syntax	        Used For
+// String Literal	        " " or ' '	    Text
+// Template Literal	        ` `	            Formatted strings
+// Object Literal	        { }            	Key-value data
+// Array Literal	        [ ]	            List of values
+
+
+// ======================================Conditional statements=======================================
+
+// 🔹 What Are Conditional Statements? -> Conditional statements help us make decisions in code.
+// Just like real life:
+// If it’s raining → take umbrella
+// Else → don’t take umbrella
+
+// Same thing in JavaScript.
+// They check a condition:
+// If condition is true → run some code
+// If condition is false → skip it or run something else
+
+// 1️⃣ If Statement
+// 👉 Runs code only if condition is true
+// 🔹 Syntax:
+// if (condition) {
+//    // code runs if condition is true
+// }
+
+// 🔹 Example:
+let speed = 87;
+if (speed > 90) {
+  console.log("OverSpeeding");
+}
+if (speed > 50 && speed <= 90) {
+  console.log("Normal");
+}
+if (speed <= 50) {
+  console.log("Slow");
+}
+
+// Here:
+// speed = 87
+// 87 is not > 90 ❌
+// 87 is between 50 and 90 ✅
+// So output: Normal 
+
+// 📝 Quick Notes (If) ->Used to check condition, Runs only when condition is true, If false → nothing happens
+
+// 2️⃣ If-Else Statement
+// 👉 Used when we have two possibilities
+// If true → do this Else → do something else
+// 🔹 Syntax:
+// if (condition) {
+//    // if true
+// } else {
+//    // if false
+// }
+
+// 🔹 Example:
+let myAge = 15;
+if (myAge >= 18) {
+   console.log("I can Drive");
+} else {
+   console.log("Cannot Drive");
+}
+// Since 15 < 18 → condition false
+// So it prints: Cannot Drive
+
+// 📝 Quick Notes (If-Else) -> Used when only 2 outcomes, Either this OR that
+
+// 3️⃣ If-Else-If Statement
+// 👉 Used when we have multiple conditions
+// Like:
+// If condition1
+// Else if condition2
+// Else (if none match)
+
+// 🔹 Syntax:
+// if (condition1) {
+//    // run if true
+// } else if (condition2) {
+//    // run if condition1 false and condition2 true
+// } else {
+//    // run if all false
+// }
+
+// 🔹 Example:
+let weight = 65;
+if (weight > 70) {
+   console.log("Overweight");
+} else if (weight > 50 && weight <= 70) {
+   console.log("Fit");
+} else {
+   console.log("Underweight");
+}
+// Here:
+// 65 is not > 70 ❌
+// 65 is between 50 and 70 ✅
+// So output: Fit
+
+// 📝 Quick Notes (If-Else-If)
+// Used for multiple conditions
+// Checks from top to bottom
+// Stops when first true condition is found
+// 🔥 Now Important: Ternary Operator (Conditional Literal)
+
+// You wrote:
+// a > b ? true : false;
+// This is called the Ternary Operator.
+// 👉 It is a shortcut for if-else.
+// 🔹 Syntax of Ternary Operator
+// condition ? value_if_true : value_if_false;
+// It means:
+// If condition is true → return first value Else → return second value
+
+// 🔹 Example 1
+let a = 10;
+let b = 5;
+let result = a > b ? true : false;
+console.log(result);
+
+// Since 10 > 5 → true
+// So result = true
+// 🔹 Real Useful Example
+// let age = 20;
+// let message = age >= 18 ? "Adult" : "Minor";
+// console.log(message);
+
+// Much cleaner than full if-else.
+
+// 📝 Quick Notes (Ternary Operator)
+// Shortcut of if-else
+// Uses ? and :
+// Syntax:
+// condition ? true_value : false_value
+// Used when only two outcomes
+// Makes code shorter
