@@ -476,14 +476,14 @@ if (myAge >= 18) {
 // }
 
 // 🔹 Example:
-let weight = 65;
-if (weight > 70) {
-   console.log("Overweight");
-} else if (weight > 50 && weight <= 70) {
-   console.log("Fit");
-} else {
-   console.log("Underweight");
-}
+// let weight = 65;
+// if (weight > 70) {
+//    console.log("Overweight");
+// } else if (weight > 50 && weight <= 70) {
+//    console.log("Fit");
+// } else {
+//    console.log("Underweight");
+// }
 // Here:
 // 65 is not > 70 ❌
 // 65 is between 50 and 70 ✅
@@ -505,10 +505,10 @@ if (weight > 70) {
 // If condition is true → return first value Else → return second value
 
 // 🔹 Example 1
-let a = 10;
-let b = 5;
-let result = a > b ? true : false;
-console.log(result);
+// let a = 10;
+// let b = 5;
+// let result = a > b ? true : false;
+// console.log(result);
 
 // Since 10 > 5 → true
 // So result = true
