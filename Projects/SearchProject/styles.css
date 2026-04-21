@@ -1,0 +1,78 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: black;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #9e9c9c;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 5px 5px 15px rgba(235, 233, 233, 0.3);
+}
+
+.serch-input {
+    max-width: 400px;
+}
+
+input {
+    height: 1.5rem;
+    min-width: 300px;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cards-collection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.4rem;
+}
+
+.card-heading {
+    margin: 0.5rem 0 0.2rem 0;
+}
+
+.card-bio {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.text-heading {
+    display: none;
+    text-align: center;
+    font-size: 2rem;
+    color: #000;
+}

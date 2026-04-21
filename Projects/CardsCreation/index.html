@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form to Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <button id="showFormBtn">Add User</button>
+
+    <form class="user-form">
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="text" id="image" placeholder="Enter Image URL" required>
+        <input type="text" id="bio" placeholder="Enter Bio" required>
+        <div>
+            <button type="submit">Add</button>
+            <button type="button" id="reset">Reset</button>
+        </div>
+    </form>
+
+    <div class="cards-collection"></div>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
