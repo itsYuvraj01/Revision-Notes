@@ -11,6 +11,17 @@ body {
     min-height: 100vh;
 }
 
+.toasterBody {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 1000;
+}
+
 .show-toast-btn {
     padding: 0.85rem 1.5rem;
     border: none;
@@ -21,7 +32,7 @@ body {
     cursor: pointer;
 }
 
-.toaster {
+/* .toaster {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
@@ -33,9 +44,9 @@ body {
     transform: translateY(-12px);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
-}
+} */
 
-.toaster.show {
+/* .toaster.show {
     opacity: 1;
     transform: translateY(0);
-}
+} */
