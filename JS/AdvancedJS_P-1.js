@@ -132,10 +132,498 @@
 // Execution Context → how JS runs code
 // Closure → function remembers outer variables
 
-// If you want, I can give you:
+// ==============================================This keyword===============================================
 
-// 🔥 tricky interview questions on closures
-// 💡 real React examples (very useful for your job prep)
-// 🧪 visual diagram to remember forever
+// global - window
+// function - window
+// method with es5 func - object
+// method with es6 arrow func - window
+// es5 func inside es5 func - window
+// arrow func inside es5 func - object
+// event handler - element
+// class - blank object
 
-// Just tell me 👍
+// function ko call krte time app set kr skte ho ki uski this ki value kya hogi
+
+// let obj = {
+//     name:'Yuvraj'
+// }
+
+// function abcd() {
+//     console.log(this)
+// }
+
+// abcd(); ----> window
+
+// call , apply & bind 
+// Call
+// let obj = {
+//     name:'Yuvraj'
+// }
+
+// function abcd() {
+//     console.log(this)
+// }
+
+// abcd.call(obj);   ---> abcd me obj ki property aaa gyi now it will give us obj this
+
+// Apply
+// let obj = {
+//     name:'Yuvraj',
+//     age:26
+// }
+
+// function abcd(a,b,c) {
+//     console.log(this ,a ,b ,c)
+// }
+
+// abcd.apply(obj, [1,2,3]);   ---> apply me do params pass hote hai obj and array of values jitni bhi hai 
+
+
+// let obj = {
+//     name:'Yuvraj',
+//     age:26
+// }
+
+// function abcd(a,b,c) {
+//     console.log(this ,a ,b ,c)
+// }
+
+// let fnc = abcd.bind(obj,1,2,3);   ---> bind ek function deta hai aur isme apply ki trh array type nhi jata saari values jati hai  
+
+
+// 🧠 What is this?
+
+// 👉 this means:
+// “Which object is currently calling this function?”
+
+// It is NOT fixed — it depends on how the function is called.
+
+// 🔑 Golden Rule (Very Important)
+
+// 👉 this is decided at CALL TIME, not when function is written
+
+// 📍 1. this in Global Scope
+// console.log(this);
+// In browser:
+
+// 👉 this === window
+
+// 📍 2. this inside a Normal Function
+// function test() {
+//   console.log(this);
+// }
+
+// test();
+
+// 👉 In browser → window
+// 👉 In strict mode → undefined
+
+// 📍 3. this inside an Object Method
+// const user = {
+//   name: "Yuvraj",
+//   greet() {
+//     console.log(this.name);
+//   }
+// };
+
+// user.greet();
+
+// 👉 Output: Yuvraj
+
+// 👉 Here:
+// this = user
+// (because user is calling the function)
+
+// 📍 4. this in Event Handlers
+// button.addEventListener("click", function () {
+//   console.log(this);
+// });
+
+// 👉 this = button
+
+// Because button triggered the event.
+
+// ⚡ 5. Arrow Functions (IMPORTANT)
+
+// 👉 Arrow functions DO NOT have their own this
+
+// They take this from parent (lexical scope)
+
+// ❌ Wrong Example
+// const user = {
+//   name: "Yuvraj",
+//   greet: () => {
+//     console.log(this.name);
+//   }
+// };
+
+// user.greet();
+
+// 👉 Output: undefined
+
+// Because:
+// 👉 Arrow function takes this from outside (global)
+
+// ✅ Correct Way
+// const user = {
+//   name: "Yuvraj",
+//   greet() {
+//     console.log(this.name);
+//   }
+// };
+// 🤯 Why Arrow Functions “lose” this?
+
+// Because they don’t create their own this.
+
+// 👉 They just borrow from outer scope
+
+// 📍 6. this in Classes
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   greet() {
+//     console.log(this.name);
+//   }
+// }
+
+// const p1 = new Person("Yuvraj");
+// p1.greet();
+
+// 👉 this = instance (p1)
+
+// 🔧 7. Manual Binding (bind, call, apply)
+
+// Sometimes you want to control this manually
+
+// ✅ call()
+// function greet() {
+//   console.log(this.name);
+// }
+
+// const user = { name: "Yuvraj" };
+
+// greet.call(user);
+
+// 👉 this = user
+
+// ✅ apply()
+
+// Same as call, but arguments in array
+
+// greet.apply(user);
+// ✅ bind() (Most Important)
+// const newFunc = greet.bind(user);
+// newFunc();
+
+// 👉 permanently binds this
+
+// 🧠 Mindset (From your image — VERY IMPORTANT)
+
+// 👉 “this doesn’t lie — call site defines it”
+
+// Meaning:
+
+// Don’t see where function is written ❌
+// See how it is called ✅
+// ⚠️ Common Confusion
+// ❓ Why this breaks in methods?
+// const user = {
+//   name: "Yuvraj",
+//   greet() {
+//     function inner() {
+//       console.log(this.name);
+//     }
+//     inner();
+//   }
+// };
+
+// user.greet();
+
+// 👉 Output: undefined
+
+// Because:
+// 👉 inner() is called as normal function → this = window
+
+// ✅ Fix using arrow
+// greet() {
+//   const inner = () => {
+//     console.log(this.name);
+//   };
+//   inner();
+// }
+
+// 👉 Now works ✅
+
+// 🛠️ Practice Tasks (from your image)
+// ✅ 1. Counter with increment/decrement
+
+// Use this inside object
+
+// const counter = {
+//   count: 0,
+//   inc() {
+//     this.count++;
+//     console.log(this.count);
+//   },
+//   dec() {
+//     this.count--;
+//     console.log(this.count);
+//   }
+// };
+// ✅ 2. Function that remembers config (Closure)
+// function createLogger(prefix) {
+//   return function (msg) {
+//     console.log(prefix + ": " + msg);
+//   };
+// }
+
+// const log = createLogger("INFO");
+// log("Hello");
+// ✅ 3. Fix this using bind
+// const user = {
+//   name: "Yuvraj",
+//   greet() {
+//     console.log(this.name);
+//   }
+// };
+
+// const fn = user.greet;
+// fn(); // ❌ undefined
+
+// const fixed = user.greet.bind(user);
+// fixed(); // ✅ Yuvraj
+// 🚀 Final Summary (Keep This in Mind)
+
+// 👉 this depends on how function is called
+// 👉 Arrow functions don’t have this
+// 👉 Use bind when this is lost
+// 👉 Methods → this = object
+// 👉 Events → this = element
+
+
+
+// ====================================================OOPS=================================================
+// 🧠 What is OOP in JavaScript?
+
+// 👉 OOP = Organizing code using objects (real-world style)
+
+// Instead of writing random functions, you create:
+
+// Objects (like real things)
+// Properties (data)
+// Methods (actions)
+// 🧱 1. Constructor Functions (Old Way)
+
+// Before ES6 classes, we used functions to create objects.
+
+// function User(name, balance) {
+//   this.name = name;
+//   this.balance = balance;
+// }
+
+// const u1 = new User("Yuvraj", 1000);
+
+// 👉 new does 4 things:
+
+// Creates empty object {}
+// Sets this to that object
+// Adds properties
+// Returns object
+// 🔗 2. Prototypes (VERY IMPORTANT)
+
+// 👉 Problem: If you define methods inside constructor → memory waste
+
+// function User(name) {
+//   this.name = name;
+//   this.sayHi = function () {
+//     console.log("Hi");
+//   };
+// }
+
+// ❌ Every object gets its own copy
+
+// ✅ Solution: Prototype
+// function User(name) {
+//   this.name = name;
+// }
+
+// User.prototype.sayHi = function () {
+//   console.log("Hi " + this.name);
+// };
+
+// 👉 Now all objects share ONE method
+
+// 🚀 3. ES6 Classes (Modern Way)
+
+// Cleaner syntax over same concept
+
+// class User {
+//   constructor(name, balance) {
+//     this.name = name;
+//     this.balance = balance;
+//   }
+
+//   deposit(amount) {
+//     this.balance += amount;
+//   }
+// }
+
+// 👉 Behind the scenes → still uses prototype
+
+// 🧬 4. Inheritance (extends, super)
+
+// 👉 Child class can reuse parent class
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+
+// class Admin extends User {
+//   constructor(name, role) {
+//     super(name); // call parent constructor
+//     this.role = role;
+//   }
+// }
+
+// 👉 extends → inheritance
+// 👉 super() → parent constructor call
+
+// 🔒 5. Encapsulation (Private Fields)
+
+// 👉 Hide internal data
+
+// class Bank {
+//   #balance = 0;
+
+//   deposit(amount) {
+//     this.#balance += amount;
+//   }
+
+//   getBalance() {
+//     return this.#balance;
+//   }
+// }
+
+// 👉 #balance = private (cannot access outside)
+
+// ⚠️ Confusions (From your image)
+// ❓ Class vs Function + Prototype
+
+// 👉 Both do SAME thing
+
+// Old Way	New Way
+// Constructor + prototype	class
+// More manual	Cleaner
+// ❓ Prototype Chain
+// obj → User.prototype → Object.prototype → null
+
+// 👉 JS looks up properties step by step
+
+// ❓ Shared vs Own Properties
+// this.name = "Yuvraj"; // own property
+// User.prototype.sayHi // shared
+// 🧠 Mindset (IMPORTANT)
+
+// 👉 Classes are for structure
+// 👉 Functions are for flexibility
+
+// 🛠️ Practice Example (Bank Account)
+// class BankAccount {
+//   constructor(name, balance) {
+//     this.name = name;
+//     this.balance = balance;
+//   }
+
+//   deposit(amount) {
+//     this.balance += amount;
+//     console.log(`${amount} deposited`);
+//   }
+
+//   withdraw(amount) {
+//     this.balance -= amount;
+//     console.log(`${amount} withdrawn`);
+//   }
+// }
+
+// const acc = new BankAccount("Yuvraj", 1000);
+// acc.deposit(500);
+// acc.withdraw(200);
+// 🧬 Extend User → Admin
+// class Admin extends BankAccount {
+//   deleteUser() {
+//     console.log("User deleted");
+//   }
+// }
+// 🎬 STORY TIME (Best Way to Remember)
+
+// Imagine this 👇
+
+// 🏦 Bank System Story
+
+// You build a Bank App
+
+// 👤 Step 1: User Blueprint (Class)
+
+// You say:
+
+// “Every user should have name + balance”
+
+// 👉 That’s your class
+
+// 💰 Step 2: Methods
+
+// Users can:
+
+// deposit 💵
+// withdraw 💸
+
+// 👉 These are methods
+
+// 🧬 Step 3: Many Users
+
+// From one class:
+
+// new BankAccount("Yuvraj", 1000)
+// new BankAccount("Rahul", 2000)
+
+// 👉 Same structure, different data
+
+// 🧠 Step 4: Prototype Magic
+
+// All users share:
+
+// deposit()
+// withdraw()
+
+// 👉 Saves memory ⚡
+
+// 👑 Step 5: Admin Power
+
+// Now you say:
+
+// “Admin is also a user… but with extra powers”
+
+// 👉 extends User
+
+// Admin can:
+
+// delete accounts ❌
+// manage users ⚙️
+// 🔒 Step 6: Secret Balance
+
+// You don’t want anyone to directly change balance:
+
+// 👉 Use private field (#balance)
+
+// 🧠 Final Memory Trick
+
+// 👉 Class = Blueprint
+// 👉 Object = Real instance
+// 👉 Prototype = Shared brain
+// 👉 Inheritance = Copy powers
+// 👉 Encapsulation = Hide secrets

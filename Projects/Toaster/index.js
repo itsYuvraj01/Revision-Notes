@@ -44,15 +44,25 @@ const runToaster1 = createToaster({
     positionX: 'right',
     positionY: 'top',
     theme: 'dark',
-    duration: 3,
+    duration: 5,
 });
 
 const runToaster2 = createToaster({
-    positionX: 'right',
-    positionY: 'top',
+    positionX: 'left',
+    positionY: 'bottom',
     theme: 'dark',
     duration: 5,
 });
+
+runToaster1('Download done');
+
+setTimeout(() => {
+    runToaster1('Khushi sent you a message')
+}, 2000);
+
+setTimeout(() => {
+    runToaster1('Yuvraj accepted your request')
+}, 5000);
 
 showToastBtn.addEventListener('click', () => {
     console.log('clicked');
