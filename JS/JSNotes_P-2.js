@@ -4,7 +4,7 @@
 // 👉 Data types tell JavaScript what kind of value a variable is storing.
 
 // Example:
-// let age = 25;      // number
+// let age = 25;         // number
 // let name = "Yuvraj";  // string
 
 
@@ -411,7 +411,7 @@
 // [1,2,3].reverse();
 // // [3,2,1]
 
-// 1️⃣8️⃣ reduce() (Important for Interviews)
+// 1️⃣8️⃣ reduce() (Important for Interviews)  *******************Doubt*******************
 // let arr = [1,2,3];
 // let sum = arr.reduce((acc, curr) => acc + curr, 0);
 // // 6
@@ -431,17 +431,16 @@
 // forEach does not return
 
 // Q2: slice vs splice?
-// slice	                                splice
-// Does not modify original	                Modifies original
-// Used to copy	                            Used to insert/delete
+// slice	                                        splice
+// Does not modify original	                        Modifies original
+// Used to copy	                                    Used to insert/delete
 
 // Q3: How to remove duplicate?
 // [...new Set(arr)]
 
 // 🚀 Real Dev Pattern (React Safe Update)
-// Wrong ❌                                  Correct ✅
-// arr.push(newItem);                         setArr([...arr, newItem]);
-
+// Wrong ❌                                   Correct ✅
+// arr.push(newItem);                          setArr([...arr, newItem]);
 
 
 // ======================Substring vs Slice vs Splice =========================================
@@ -496,7 +495,6 @@
 // let arr = [1,2,3];
 // arr.splice(1,1,5);  
 // // [1,5,3]
-
 
 
 // =======================================IMPORTANT JS ARRAY METHODS=======================================

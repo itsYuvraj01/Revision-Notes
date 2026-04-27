@@ -157,10 +157,11 @@
 
 // 📊 Comparison Table
 // Feature	                  var	                let	            const
-// Scope	                  Function	            Block	        Block
+// ======================================================================================
+// Scope	                    Function	          Block	          Block
 // Reassign	                  Yes	                Yes	            No
-// Redeclare	              Yes	                No	            No
-// Hoisted	                  Yes (undefined) 	    Yes (TDZ)	    Yes (TDZ)
+// Redeclare	                Yes	                No	            No
+// Hoisted	                  Yes (undefined) 	  Yes (TDZ)	      Yes (TDZ)
 // Must Initialize	          No	                No	            Yes
 
 
@@ -220,55 +221,60 @@
 // 1️⃣ Arithmetic Operators
 // 👉 Used to perform mathematical calculations.
 // Operator	    Meaning	            Example	        Type
-// +	        Addition	        5 + 2 → 7	    Binary
-// -	        Subtraction	        5 - 2 → 3	    Binary
-// *	        Multiplication	    5 * 2 → 10	    Binary
-// /	        Division	        10 / 2 → 5	    Binary
-// %	        Remainder	        10 % 3 → 1	    Binary
-// **	        Power	            2 ** 3 → 8	    Binary
-// ++	        Increment by        1	x++	        Unary
-// --	        Decrement by        1	x--	        Unary
+// ======================================================================
+// +	          Addition	          5 + 2 → 7	      Binary
+// -	          Subtraction	        5 - 2 → 3	      Binary
+// *	          Multiplication	    5 * 2 → 10	    Binary
+// /	          Division	          10 / 2 → 5	    Binary
+// %	          Remainder	          10 % 3 → 1	    Binary
+// **	          Power	              2 ** 3 → 8	    Binary
+// ++	          Increment by        1	x++	          Unary
+// --	          Decrement by        1	x--	          Unary
 
 // 2️⃣ Assignment Operators
 // 👉 Used to assign or update values.
-// Operator	    Meaning	                Example	    Type
-// =	        Assign value	        x = 10	    Binary
-// +=	        Add & assign	        x += 5	    Binary
-// -=	        Subtract & assign	    x -= 5	    Binary
-// *=	        Multiply & assign	    x *= 2	    Binary
-// /=	        Divide & assign	        x /= 2	    Binary
+// Operator	    Meaning	                Example	      Type
+// ====================================================================
+// =	          Assign value	          x = 10	      Binary
+// +=	          Add & assign	          x += 5	      Binary
+// -=	          Subtract & assign	      x -= 5	      Binary
+// *=	          Multiply & assign	      x *= 2	      Binary
+// /=	          Divide & assign	        x /= 2	      Binary
 
 // 3️⃣ Comparison Operators
 // 👉 Used to compare values and return true/false.
-// Operator	    Meaning	                        Example	                Type
-// >	        Greater than	                5 > 3 → true	        Binary
-// <	        Less than	                    5 < 3 → false	        Binary
-// >=	        Greater equal	                5 >= 5 → true	        Binary
-// <=	        Less equal	                    4 <= 3 → false	        Binary
-// ==	        Loose equal (value only)	    "5" == 5 → true	        Binary
-// ===	        Strict equal (value + type)	    "5" === 5 → false	    Binary
-// !=	        Loose not equal	                "5" != 5 → false	    Binary
-// !==	        Strict not equal	            "5" !== 5 → true	    Binary
+// Operator	    Meaning	                        Example	                  Type
+// ==========================================================================================
+// >	          Greater than	                  5 > 3 → true	            Binary
+// <	          Less than	                      5 < 3 → false	            Binary
+// >=	          Greater equal	                  5 >= 5 → true	            Binary
+// <=	          Less equal	                    4 <= 3 → false	          Binary
+// ==	          Loose equal (value only)	      "5" == 5 → true	          Binary
+// ===	        Strict equal (value + type)	    "5" === 5 → false	        Binary
+// !=	          Loose not equal	                "5" != 5 → false	        Binary
+// !==	        Strict not equal	              "5" !== 5 → true	        Binary
 
 // 👉 Always prefer === in development.
 
 // 4️⃣ Logical Operators
 // 👉 Used to combine conditions.
-// Operator	    Meaning	                Example	                Type
-// &&	        AND (both true)	        true && false → false	Binary
-// ||		    OR (any one true)       true && false → true    Binary
-// !	        NOT (reverse)	        !true → false	        Unary
+// Operator	    Meaning	                Example	                    Type
+// =====================================================================================
+// &&	          AND (both true)	        true && false → false	      Binary
+// ||		        OR (any one true)       true && false → true        Binary
+// !	          NOT (reverse)	          !true → false	              Unary
 
 // 5️⃣ Bitwise Operators
 // 👉 Work on binary (0 & 1) level.
 
-// Operator	    Meaning	            Example     	Type
-// &	        Bitwise AND	        5 & 3 → 1	    Binary
-// |	        |	                5 | 3 → 7       Binary
-// ^	        XOR	                 5 ^ 3 → 6	    Binary
-// ~	        NOT	                ~5 → -6	        Unary
-// <<	        Left Shift	        5 << 1 → 10	    Binary
-// >>	        Right Shift	        5 >> 1 → 2	    Binary
+// Operator	    Meaning	            Example     	  Type
+// ========================================================================
+// &	        Bitwise AND	          5 & 3 → 1	      Binary
+// |	        |	                    5 | 3 → 7       Binary
+// ^	        XOR	                  5 ^ 3 → 6	      Binary
+// ~	        NOT	                  ~5 → -6	        Unary
+// <<	        Left Shift	          5 << 1 → 10	    Binary
+// >>	        Right Shift	          5 >> 1 → 2	    Binary
 
 // 🔥 Left Shift (<<) – Very Simple -> Shifts bits to left -> Multiplies number by 2 power n
 // Example: rule -> a << b = a × (2^b)
@@ -383,7 +389,6 @@
 
 // Example 2 (Mixed Data Types)
 // let container = [2, "laptop", true, "watch"];
-
 
 // JavaScript arrays:Can store different types, Can store objects, Can store other arrays
 
