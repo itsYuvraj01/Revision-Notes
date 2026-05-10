@@ -28,3 +28,6 @@
 //  14. Use form hook
 //  15. Create multiple components in sigle page
 //  16. Props
+//  17. Design patterns in react
+//  18. Scalability, maintainability and code architecture
+//  19. Performance Optimisation
