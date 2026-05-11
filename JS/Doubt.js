@@ -31,3 +31,16 @@
 //  17. Design patterns in react
 //  18. Scalability, maintainability and code architecture
 //  19. Performance Optimisation
+
+
+
+
+// Node backend
+// Complete course
+// Load balancer
+// Optimisation
+// Database designing
+// Web sockets
+// Multer
+// crownJobs in nodejs
+
